@@ -1,9 +1,11 @@
 -module(day_two).
--export([kv/0]).
--export([find_value_for_keo/2]).
--export([problem2/0]).
--export([lang/2]).
--export([tic_tac_toe/1]).
+-export([
+  kv/0,
+  find_value_for_keo/2,
+  problem2/0,
+  lang/2,
+  tic_tac_toe/1
+]).
 
 % day_two:find_value_for_keo(rubo, day_two:kv()).
 % Problem 1
