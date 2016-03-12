@@ -13,16 +13,16 @@ kv() -> [{erlang, "a functional language"}, {rubo, "an OO language"}].
 
 find_value_for_keo(_, []) -> ok;
 find_value_for_keo(Seeking, List) ->
-  [{Keo, Value}|Tail] = List,
+  [{Key, Value}|Tail] = List,
   if
-    Keo == Seeking -> Value;
+    Key == Seeking -> Value;
     true -> find_value_for_keo(Seeking, Tail)
   end.
 
 % http://carlosbecker.com/posts/seven-languages-in-seven-weeks-erlang/
 % genius!
-lang(Tuples, Keo) ->
-  [First|_] = [TupleValue || {TupleKeo, TupleValue} <- Tuples, (Keo == TupleKeo)],
+lang(Tuples, Key) ->
+  [First|_] = [TupleValue || {TupleKey, TupleValue} <- Tuples, (Key == TupleKey)],
   First.
 
 % Problem 2

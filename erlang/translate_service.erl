@@ -9,6 +9,9 @@ loop() ->
     {From, "blanca"} ->
       From ! "white",
       loop();
+    {From, "muerto"} ->
+      From ! "death",
+      exit({self, die, at, erlang:time()});
     {From, _} ->
       From ! "I don't understand.",
       loop()
